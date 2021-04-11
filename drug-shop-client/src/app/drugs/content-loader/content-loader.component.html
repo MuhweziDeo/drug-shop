@@ -1,0 +1,16 @@
+<ng-container>
+    <nz-card  [nzLoading]="true"  style="width: 300px;margin-top: 16px" [nzActions]="[actionSetting, actionEdit, actionEllipsis]">
+      <nz-skeleton [nzActive]="true" [nzLoading]="true" [nzAvatar]="{ size: 'large' }">
+        <nz-card-meta nzTitle="Card title" nzDescription="This is the description"></nz-card-meta>
+      </nz-skeleton>
+    </nz-card>
+  <ng-template #actionSetting>
+    <i nz-icon  nzType="shopping-cart"></i>
+  </ng-template>
+  <ng-template #actionEdit>
+    <i nz-icon nzType="star"></i>
+  </ng-template>
+  <ng-template #actionEllipsis>
+    <i nz-icon nzType="ellipsis"></i>
+  </ng-template>
+</ng-container>

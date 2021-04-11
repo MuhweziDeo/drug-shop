@@ -1,0 +1,8 @@
+<div style="margin-top:20px" nz-row class="container-drugs-list">
+    <ng-container *ngIf="!loading">
+        <app-card  nz-col nzSpan="6" class="mb-5" *ngFor="let drug of drugs" [drug]="drug"></app-card>
+    </ng-container>
+    <ng-container *ngIf="loading">
+        <app-content-loader nz-col nzSpan="6"  *ngFor="let drug of loaderContentList"  ></app-content-loader>
+    </ng-container>
+</div>

@@ -1,0 +1,30 @@
+<div>
+  <ul nz-menu nzMode="horizontal">
+    <li [routerLink]="'/'" nz-menu-item nzSelected='/'>
+      <i nz-icon nzType="home"></i>
+     Home
+    </li>
+    <li nz-menu-item>
+      <i nz-icon nzType="mail"></i>
+      Contact
+    </li>
+    <li nz-submenu nzTitle="Account" nzIcon="user">
+      <ul>
+        <li nz-menu-item>
+          Login
+        </li>
+
+        <li nz-menu-item>
+          Create
+        </li>
+      </ul>
+    </li>
+    <li nz-menu-item nzSelected='/cart' [routerLink]="'/cart'">
+      <nz-badge [nzCount]="cartService.drugs.value.length">
+        <i nz-icon [nzType]="'shopping-cart'"></i>
+      </nz-badge>
+    </li>
+  </ul>
+<router-outlet></router-outlet>
+</div>
+

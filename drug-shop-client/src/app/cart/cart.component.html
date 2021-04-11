@@ -1,0 +1,25 @@
+<ng-container *ngIf="cartService.drugs.value.length;">
+    <nz-card nzTitle="My Cart">
+        <p style="font-size:14px;color:rgba(0, 0, 0, 0.85);margin-bottom:16px;font-weight: 500;">
+          Drug List
+        </p>
+        
+        <nz-card *ngFor="let drug of cartService.drugs.value" nzType="inner" [nzTitle]="drug.name" [nzExtra]="extraTemplate">
+        <img [nzSrc]="drug.image[0].previewUrl" nz-image width="100px" height="100px" [nzFallback]="fallback" alt="" />
+        <br/>
+          <ng-template #extraTemplate>
+            <button
+            nz-popconfirm
+            nzPopconfirmTitle="Are you sure remove this item from your cart"
+            nzPopconfirmPlacement="bottom" 
+            (nzOnConfirm)="onRemoveDrug(drug)"
+             nz-button nzType="danger" nzSize="small"><i nz-icon nzType="delete"></i>Remove</button>
+          </ng-template>
+        </nz-card>
+      </nz-card>
+  
+</ng-container>
+
+  <ng-container *ngIf="!cartService.drugs.value.length;">
+    <nz-empty></nz-empty>
+  </ng-container>

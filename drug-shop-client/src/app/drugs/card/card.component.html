@@ -1,0 +1,22 @@
+<ng-container>
+  <nz-card [nzLoading]="false" style="width:300px; margin-bottom: 10px;" [nzCover]="coverTemplate" [nzActions]="[actionSetting, actionEdit, actionEllipsis]">
+    <nz-card-meta [nzTitle]="drug.name" [nzDescription]="drug.price">
+    </nz-card-meta>
+    <p>{{drug.description}}</p>
+  </nz-card>
+
+
+  <ng-template #coverTemplate>
+    <img width="300" height="200"[alt]="drug.image[0].alternativeText" [src]="drug.image[0].previewUrl" />
+  </ng-template>
+  <ng-template #actionSetting>
+    <i nz-icon (click)="onAddToCart()" nzType="shopping-cart"></i>
+  </ng-template>
+  <ng-template #actionEdit>
+    <i nz-icon nzType="star"></i>
+  </ng-template>
+  <ng-template #actionEllipsis>
+    <i nz-icon nzType="ellipsis"></i>
+  </ng-template>
+
+</ng-container>
